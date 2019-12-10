@@ -33,15 +33,15 @@ const tableData = {
 };
 
 const navItems: Array<INavObject> = [
-  {label:'ColorPicker', component:<ColorPicker/>},
   {label:'Instructions', component:<Instructions/>},
+  {label:'ColorPicker', component:<ColorPicker/>},
   {label:'List', component:<List items={cars}/>},
   {label:'Mover', component:<Mover/>},
   {label:'Table', component:<Table data={tableData}/>}
 ];
 
 export const App = (props: AppProps) => {
-  const [navItem, setNavItem] = useState('Instructions');
+  const [navItem, setNavItem] = useState(<Instructions/>);
   return (
     <div>
       <h1>Hello from {props.compiler} and {props.framework}!</h1>
