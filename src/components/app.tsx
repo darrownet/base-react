@@ -1,53 +1,64 @@
-import React, {useState} from 'react';
-
-import Nav from "./nav/nav";
-
-import ColorPicker from "./color-pIcker/ColorPicker";
-import Instructions from "./instructions/Instructions";
-import List from "./list/list";
-import Mover from "./mover/Mover";
-import Table from "./table/Table";
+import React from "react";
+import { BorrowerAccounts } from "../components/BorrowerAccounts/index";
+import { CorporateAccounts } from "../components/CorporateAccounts/index";
 
 interface AppProps {
   compiler: string;
   framework: string;
 }
 
-interface INavObject {
-  label: string;
-  component: any;
-}
-
-const cars = ['Acura', 'Alfa Romeo', 'Audi', 'BMW', 'Chevrolet', 'Fiat', 'Ford', 'Jeep', 'Kia', 'Honda', 'Hundai', 'Mercedes', 'Porsche', 'Subaru', 'Tesla', 'Toyota'];
-
-
-const tableData = {
-  heads: ['brand', 'product', 'price'],
-  rows: [
-    ['Apple', 'Laptop', '$4000.00'],
-    ['Dell', 'Tower', '$2000.00'],
-    ['Acer', 'Tower', '$1000.00'],
-    ['Lenovo', 'Laptop', '$3400.00'],
-    ['Microsoft', 'Tablet', '$1500.00']
-  ]
-};
-
-const navItems: Array<INavObject> = [
-  {label:'Instructions', component:<Instructions/>},
-  {label:'ColorPicker', component:<ColorPicker/>},
-  {label:'List', component:<List items={cars}/>},
-  {label:'Mover', component:<Mover/>},
-  {label:'Table', component:<Table data={tableData}/>}
-];
-
 export const App = (props: AppProps) => {
-  const [navItem, setNavItem] = useState(<Instructions/>);
   return (
     <div>
-      <h1>Hello from {props.compiler} and {props.framework}!</h1>
-      <Nav items={navItems} handler={setNavItem}/>
-      {navItem}
+      <div>
+        <h2>Parties</h2>
+        <ul>
+          <li>
+            <UserIcon />
+            <span>Borrowers</span>
+            <div>
+              <StatusIcon />
+              Status
+              <span>3 Active</span>
+              <ul>
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <UserIcon />
+            <span>1 SII / Non-Obligors</span>
+            <div>
+              <StatusIcon />
+              Status
+              <span>1 Active</span>
+              <ul>
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <main>
+        <div>
+          <SectionIcon />
+          <h2>Financials at time of transfer</h2>
+          <BorrowerAccounts />
+        </div>
+        <div>
+          <SectionIcon />
+          <h2>Financials at time of transfer</h2>
+          <CorporateAccounts />
+        </div>
+      </main>
     </div>
   );
 };
 
+// Rules
+// Ensure svgs have color props
+// Allow provision for Key Values to have colour props
