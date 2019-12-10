@@ -25,10 +25,10 @@ const tableData = {
   heads: ['brand', 'product', 'price'],
   rows: [
     ['Apple', 'Laptop', '$4000.00'],
-    ['Apple', 'Laptop', '$4000.00'],
-    ['Apple', 'Laptop', '$4000.00'],
-    ['Apple', 'Laptop', '$4000.00'],
-    ['Apple', 'Laptop', '$4000.00'],
+    ['Dell', 'Tower', '$2000.00'],
+    ['Acer', 'Tower', '$1000.00'],
+    ['Lenovo', 'Laptop', '$3400.00'],
+    ['Microsoft', 'Tablet', '$1500.00']
   ]
 };
 
