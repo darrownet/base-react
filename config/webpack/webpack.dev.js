@@ -13,16 +13,13 @@ module.exports = merge(common, {
     'webpack/hot/only-dev-server'
   ],
   devServer: {
-    contentBase: resolve(__dirname, '../../src/client'),
+    contentBase: resolve(__dirname, '../../src'),
     port: dotenv.parsed.DEV_PORT,
     historyApiFallback: true,
     hot: true,
     https: false,
     inline: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    proxy: {
-      '/graphql': `http://localhost:${dotenv.parsed.GQL_PORT}/graphql`
-    }
   },
   plugins: [
     new HtmlWebpackPlugin({

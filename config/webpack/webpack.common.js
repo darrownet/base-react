@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   context: resolve(__dirname, '../../src'),
-  entry: ['./index.tsx', './styles/styles.scss'],
+  entry: ['./index.tsx'],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
