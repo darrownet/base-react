@@ -13,7 +13,7 @@ module.exports = merge(common, {
   entry: ["react-hot-loader/patch", "webpack/hot/only-dev-server"],
   devServer: {
     contentBase: resolve(__dirname, "../../src"),
-    port: do  3000,
+    port: 3000,
     historyApiFallback: true,
     hot: true,
     https: false,
